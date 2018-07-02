@@ -13,8 +13,8 @@ class QuestionViewController: UIViewController, UITextViewDelegate {
     // Color changing objects
     @IBOutlet weak var background: UIView!
     @IBOutlet weak var header: UIView!
-    @IBOutlet weak var clearButton: UIButton!
-    @IBOutlet weak var goButton: UIButton!
+    @IBOutlet weak var clearButton: UIView!
+    @IBOutlet weak var goButton: UIView!
     
     // Label
     @IBOutlet weak var bookTitle: UILabel!

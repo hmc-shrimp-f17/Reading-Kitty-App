@@ -15,14 +15,14 @@ class VideoPlayerViewController: UIViewController {
     var audioURL: URL = URL(fileURLWithPath: "")
     var allText:NSMutableAttributedString = NSMutableAttributedString(string: "")
     var videoFileName: String = ""
+    var feedback = ""
     
     // Loading icon
     var makeNewVideo: Bool = false
     @IBOutlet weak var loadingIcon: UIActivityIndicatorView!
     
     // Buttons
-    @IBOutlet weak var playButton: UIButton!
-    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var buttons: UIStackView!
     
     // Temporary timer
     var timer: Timer!
@@ -42,19 +42,13 @@ class VideoPlayerViewController: UIViewController {
             // Show loading icon, and hide play and done buttons
             loadingIcon.isHidden = false
             loadingIcon.hidesWhenStopped = true
-            playButton.isEnabled = false
-            playButton.isHidden = true
-            doneButton.isEnabled = false
-            doneButton.isHidden = true
+            buttons.isHidden = true
         } else {
             // Show play and done buttons, and hide loading icon
             print("hmm")
             loadingIcon.isHidden = true
             loadingIcon.hidesWhenStopped = true
-            playButton.isEnabled = true
-            playButton.isHidden = false
-            doneButton.isEnabled = true
-            doneButton.isHidden = false
+            buttons.isHidden = false
         }
         
     }
@@ -95,10 +89,7 @@ class VideoPlayerViewController: UIViewController {
         
         print("show buttons")
         // Show play and done buttons
-        playButton.isEnabled = true
-        playButton.isHidden = false
-        doneButton.isEnabled = true
-        doneButton.isHidden = false
+        buttons.isHidden = false
     }
     
     func makeVideo() {
