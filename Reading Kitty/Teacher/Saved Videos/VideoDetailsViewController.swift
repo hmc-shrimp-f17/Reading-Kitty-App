@@ -45,17 +45,6 @@ class VideoDetailsViewController: UIViewController {
         self.performSegue(withIdentifier: "SavedVideos", sender: self)
     }
     
-    // When user clicks the delete button, it removes the video from the saved videos list and sends them to the SavedVideos scene
-    @IBAction func deleteButton(_ sender: Any) {
-        // Delete video
-        print(modelController.getVideoTitles())
-        modelController.deleteVideo()
-        print(modelController.getVideoTitles())
-        
-        // Go to SavedVideos
-        self.performSegue(withIdentifier: "SavedVideos", sender: self)
-    }
-    
     // When user clicks the play button, it plays the video and send them to the Player scene
     @IBAction func playVideo(_ sender: Any) {
         // Get video
@@ -72,6 +61,31 @@ class VideoDetailsViewController: UIViewController {
             })
         }
     }
+    
+    // When user clicks the export button, it exports the video.
+    @IBAction func exportButton(_ sender: Any) {
+        // Get video
+        let currentVideo = modelController.getVideo()
+        
+        // Download video
+        if let path = Bundle.main.path(forResource: currentVideo.file, ofType: "mp4") {
+            // Do some stuff
+            print("exporting doesn't work right now")
+            
+        }
+    }
+    
+    // When user clicks the delete button, it removes the video from the saved videos list and sends them to the SavedVideos scene
+    @IBAction func deleteButton(_ sender: Any) {
+        // Delete video
+        print(modelController.getVideoTitles())
+        modelController.deleteVideo()
+        print(modelController.getVideoTitles())
+        
+        // Go to SavedVideos
+        self.performSegue(withIdentifier: "SavedVideos", sender: self)
+    }
+    
     
     // Passing data
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

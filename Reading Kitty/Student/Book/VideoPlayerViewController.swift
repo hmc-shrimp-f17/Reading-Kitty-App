@@ -110,8 +110,10 @@ class VideoPlayerViewController: UIViewController {
         
         // import video into data set
         
-        // get videofile
+        // get file name, feedback, and url
         videoFileName = "Emperor's New Clothes"
+        feedback = "Good job."
+        
         print("video made")
         makeNewVideo = false
     }
@@ -132,7 +134,7 @@ class VideoPlayerViewController: UIViewController {
     /********** SEGUE FUNCTIONS **********/
     @IBAction func doneButton(_ sender: Any) {
         // Save video
-        modelController.saveVideo(feedback: "Good job.", file: "Emperor's New Clothes")
+        modelController.saveVideo(feedback: feedback, file: videoFileName)
         print("saved video")
         
         // Go to the Welcome scene

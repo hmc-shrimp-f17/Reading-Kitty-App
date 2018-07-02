@@ -3,7 +3,7 @@
 //  Reading Kitty
 //
 //  Created by cssummer18 on 6/11/18.
-//  Copyright © 2018 cssummer18. All rights reserved.   git tutorial
+//  Copyright © 2018 cssummer18. All rights reserved.
 //
 
 import Foundation
